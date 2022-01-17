@@ -1,24 +1,38 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/header/Header';
+import SliderImages from './components/SliderImages';
+import CardsSlider from './components/CardsSlider';
+import Premire from './components/Premire';
+import Footer from './components/Footer';
+import AllMovies from "./components/AllMovies";
+import SingleMovie from "./components/SingleMovie";
+import Registration from "./components/Registration";
+import {BrowserRouter as Router,Switch,Route,} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Router>
+    <div>
+      <Header />
+      <Switch>
+        <Route exact path="/">
+            <SliderImages />
+            <CardsSlider />
+            <Premire />  
+        </Route>
+        <Route exact path="/all-movies"> 
+        <AllMovies />
+        </Route>
+        <Route exact path="/all-movies/:movid"> 
+        <SingleMovie />
+        </Route>
+        <Route exact path="/registration"> 
+        <Registration />
+        </Route>
+      </Switch>
+      <Footer />
     </div>
+    </Router>
   );
 }
 
