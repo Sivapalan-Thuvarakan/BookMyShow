@@ -12,7 +12,7 @@ function SingleMovie(){
     const [singledata,setSingledata] = useState([]);
     useEffect(async () => {
         try {
-          const response = await axios.get(`http://localhost:5000/movies/${movid}`);
+          const response = await axios.get(`https://bms-final.herokuapp.com/movies/${movid}`);
           console.log(response);
           setSingledata(response.data);
         } catch (error) {

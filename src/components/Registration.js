@@ -23,7 +23,7 @@ function Registration(){
         }
         
         
-            const response = await axios.post(`http://localhost:5000/user-register`,userDetails)
+            const response = await axios.post(`https://bms-final.herokuapp.com/user-register`,userDetails)
             .then((response)=>{
                 console.log(response);
                 Swal.fire({
